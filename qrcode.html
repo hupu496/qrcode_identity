@@ -24,7 +24,7 @@
         .card-container {
             position: relative;
             width: 350px;
-            height: 550px;
+            height: 580px;
             transform-style: preserve-3d;
             animation: float 6s ease-in-out infinite;
         }
@@ -141,7 +141,7 @@
         
         .footer {
             background-color: rgba(0, 0, 0, 0.2);
-            padding: 15px 25px;
+            padding: 3px 22px;
             text-align: center;
             position: relative;
             z-index: 2;
@@ -159,6 +159,7 @@
             justify-content: center;
             gap: 15px;
             margin-bottom: 10px;
+            align-items: center;
         }
         
         .contact-icon {
@@ -166,6 +167,20 @@
             color: #ffeb3b;
             text-shadow: 0 1px 3px rgba(0,0,0,0.3);
             transform: translateZ(10px);
+            min-width: 20px;
+        }
+        
+        .contact-text {
+            text-align: left;
+        }
+        
+        .training-hours {
+            font-size: 13px;
+            margin-top: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 6px 10px;
+            border-radius: 5px;
+            display: inline-block;
         }
         
         .qr-text {
@@ -187,7 +202,7 @@
         
         .watermark {
             position: absolute;
-            bottom: 10px;
+            bottom: 20px;
             right: 10px;
             font-size: 10px;
             opacity: 0.5;
@@ -301,24 +316,35 @@
                     <div class="registration">
                         Registration: 7541/619/2011
                     </div>
+                    <div class="contact-info">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i> 
+                    </div>
+                    <div class="contact-text">Work all over India</div>
                 </div>
+                <div class="training-hours ">
+                    <i class="fas fa-clock"></i> Training: 10 AM to 7 PM
+                </div>
+                
+                </div>
+                
             </div>
             
             <div class="footer">
                 <div class="contact-title">Contact Us</div>
                 <div class="contact-info">
                     <div class="contact-icon">
-                        <i class="fas fa-envelope"></i> 
-                        <span style="margin-left:5px;">pragalibharat2011@gmail.com</span>
+                        <i class="fas fa-phone"></i>
                     </div>
-                    
+                    <div class="contact-text">7979993535</div>
                 </div>
                 <div class="contact-info">
                     <div class="contact-icon">
-                        <i class="fas fa-globe"></i> 
-                        <span style="margin-left:5px;">Work all over India</span>
+                        <i class="fas fa-envelope"></i> 
                     </div>
+                    <div class="contact-text">pragalibharat2011@gmail.com</div>
                 </div>
+                
             </div>
             
             <div class="watermark">Kamna Charitable Trust</div>
