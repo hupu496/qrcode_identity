@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
-        
+
         body {
             margin: 0;
             padding: 0;
@@ -20,7 +21,7 @@
             perspective: 1000px;
             overflow: hidden;
         }
-        
+
         .card-container {
             position: relative;
             width: 350px;
@@ -28,49 +29,56 @@
             transform-style: preserve-3d;
             animation: float 6s ease-in-out infinite;
         }
-        
+
         @keyframes float {
-            0%, 100% { transform: rotateY(-5deg) rotateX(5deg) translateY(0); }
-            50% { transform: rotateY(5deg) rotateX(-5deg) translateY(-20px); }
+
+            0%,
+            100% {
+                transform: rotateY(-5deg) rotateX(5deg) translateY(0);
+            }
+
+            50% {
+                transform: rotateY(5deg) rotateX(-5deg) translateY(-20px);
+            }
         }
-        
+
         .business-card {
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #1e5799 0%, #207cca 51%, #2989d8 100%);
+            background: linear-gradient(135deg, #fbf3e4 100%);
             border-radius: 15px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
             overflow: hidden;
-            color: white;
+            color: rgba(23, 22, 22, 0.996);
             position: absolute;
             backface-visibility: hidden;
             transform-style: preserve-3d;
             transition: transform 0.5s ease;
         }
-        
+
         .card-header {
-            padding: 25px;
+            padding: 10px;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: rgba(236, 176, 136, 0.915);
             position: relative;
             z-index: 2;
         }
-        
+
         .logo {
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 5px;
             color: #fff;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
-        
+
         .tagline {
             font-size: 14px;
             opacity: 0.9;
             margin-bottom: 15px;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         }
-        
+
         .card-body {
             padding: 20px 25px;
             position: relative;
@@ -78,33 +86,38 @@
             height: 320px;
             overflow: hidden;
         }
-        
+
         .scroll-content {
             animation: scrollText 30s linear infinite;
         }
-        
+
         @keyframes scrollText {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-70%); }
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-70%);
+            }
         }
-        
+
         .org-name {
             font-size: 20px;
             font-weight: 600;
             margin-bottom: 15px;
             text-align: center;
             color: #ffeb3b;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
-        
+
         .address {
             font-size: 13px;
             line-height: 1.5;
             margin-bottom: 15px;
             text-align: center;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         }
-        
+
         .registration {
             font-size: 12px;
             background-color: rgba(255, 255, 255, 0.1);
@@ -112,9 +125,9 @@
             border-radius: 5px;
             text-align: center;
             margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        
+
         .services {
             display: flex;
             flex-wrap: wrap;
@@ -122,38 +135,39 @@
             justify-content: center;
             margin-bottom: 20px;
         }
-        
+
         .service-item {
             background-color: rgba(255, 255, 255, 0.15);
             padding: 8px 12px;
             border-radius: 20px;
             font-size: 11px;
             font-weight: 500;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             transform: translateZ(20px);
             transition: transform 0.3s ease;
         }
-        
+
         .service-item:hover {
             transform: translateZ(30px) scale(1.1);
             background-color: rgba(255, 255, 255, 0.25);
         }
-        
+
         .footer {
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: #dec9a2d4;
+            (0, 0, 0, 0.2);
             padding: 3px 22px;
             text-align: center;
             position: relative;
             z-index: 2;
         }
-        
+
         .contact-title {
             font-size: 14px;
             margin-bottom: 10px;
             font-weight: 600;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         }
-        
+
         .contact-info {
             display: flex;
             justify-content: center;
@@ -161,19 +175,19 @@
             margin-bottom: 10px;
             align-items: center;
         }
-        
+
         .contact-icon {
             font-size: 16px;
             color: #ffeb3b;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
             transform: translateZ(10px);
             min-width: 20px;
         }
-        
+
         .contact-text {
             text-align: left;
         }
-        
+
         .training-hours {
             font-size: 13px;
             margin-top: 5px;
@@ -182,24 +196,24 @@
             border-radius: 5px;
             display: inline-block;
         }
-        
+
         .qr-text {
             font-size: 12px;
             margin-top: 10px;
             font-style: italic;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         }
-        
+
         .highlight {
             font-size: 14px;
             text-align: center;
             margin: 25px 0;
             font-weight: 600;
             color: #ffeb3b;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             transform: translateZ(15px);
         }
-        
+
         .watermark {
             position: absolute;
             bottom: 20px;
@@ -208,7 +222,7 @@
             opacity: 0.5;
             z-index: 2;
         }
-        
+
         /* 3D Effect Elements */
         .card-edge {
             position: absolute;
@@ -221,12 +235,12 @@
             transform-origin: left center;
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
-            box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
         }
-        
+
         .card-bottom {
             position: absolute;
-            background: linear-gradient(0deg, #0d3a6b 0%, #14508e 100%);
+            background: linear-gradient(0deg, #dda44e 0%, #ebaa5a 100%);
             width: 100%;
             height: 15px;
             bottom: -15px;
@@ -235,121 +249,150 @@
             transform-origin: center top;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-        
+
         .shadow {
             position: absolute;
             width: 80%;
             height: 30px;
-            background: radial-gradient(ellipse at center, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(ellipse at center, rgba(232, 140, 54, 0.4) 0%, rgba(236, 195, 132, 0.711) 70%);
             bottom: -40px;
             left: 10%;
             filter: blur(5px);
             animation: shadow-pulse 6s ease-in-out infinite;
         }
-        
+
         @keyframes shadow-pulse {
-            0%, 100% { transform: scale(1); opacity: 0.7; }
-            50% { transform: scale(1.1); opacity: 0.5; }
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.5;
+            }
         }
-        
+
         /* 3D Text Effects */
-        .service-item:nth-child(1) { transform: translateZ(10px); }
-        .service-item:nth-child(2) { transform: translateZ(20px); }
-        .service-item:nth-child(3) { transform: translateZ(15px); }
-        .service-item:nth-child(4) { transform: translateZ(25px); }
-        .service-item:nth-child(5) { transform: translateZ(18px); }
-        
+        .service-item:nth-child(1) {
+            transform: translateZ(10px);
+        }
+
+        .service-item:nth-child(2) {
+            transform: translateZ(20px);
+        }
+
+        .service-item:nth-child(3) {
+            transform: translateZ(15px);
+        }
+
+        .service-item:nth-child(4) {
+            transform: translateZ(25px);
+        }
+
+        .service-item:nth-child(5) {
+            transform: translateZ(18px);
+        }
+
         .paused {
             animation-play-state: paused;
         }
     </style>
 </head>
+
 <body>
     <div class="card-container">
         <div class="business-card">
             <div class="card-header">
-                <div class="logo">Kamna Charitable Trust</div>
-                <div class="tagline">Serving Humanity with Compassion</div>
+                <img src="Logo.jpg" height="24 px" width="24 px" alt="">
+
+                <div class="logo">sarvashray</div>
+                <div class="tagline">A trusted partner for every need of your home</div>
             </div>
-            
+
             <div class="card-body">
                 <div class="scroll-content">
                     <div class="org-name">Pragati Bharat Finance Hub</div>
-                    
+
                     <div class="address">
-                        New Kalimati Road, Hira Singh Bagan,<br>
-                        Near Sahara Complex, Sakchi,<br>
-                        Jamshedpur
+                        "Flat/Door/Block No- KASHIDA,"
+                        <br>
+                        "Ghatsila"
+                        <br>
+                        "EAST SINGHHBHUM, Jharkhand"
                     </div>
-                    
-                    <div class="registration">
-                        Registration: 7541/619/2011
+
+                    <div class="GST">
+                       GST No : 20AZWPB5827D1ZK
                     </div>
-                    
+
                     <div class="services">
-                        <div class="service-item">Pragati Bharat Micro Finance</div>
-                        <div class="service-item">Pragati Bharat Crime Control</div>
-                        <div class="service-item">Pragati Bharat Old Age Home</div>
-                        <div class="service-item">Pragati Bharat Child Education</div>
-                        <div class="service-item">Pragati Bharat Generation Plan</div>
+                        <div class="service-item">Puja Items</div>
+                        <div class="service-item">House Items</div>
+                        <div class="service-item">Software Design</div>
+                        <div class="service-item">Tour & Travels</div>
+                        <div class="service-item">Interior Decorator</div>
+                        <div class="service-item">Event Management</div>
+                        <div class="service-item">Ayurved Medicine </div>
                     </div>
-                    
+
                     <div class="highlight">
                         We are doing all the work 100%
                     </div>
-                    
+
                     <div class="qr-text">
                         Scan QR for more information
                     </div>
-                    
+
                     <!-- Duplicate content for continuous scroll -->
                     <div class="org-name">Pragati Bharat Finance Hub</div>
-                    
+
                     <div class="address">
-                        New Kalimati Road, Hira Singh Bagan,<br>
-                        Near Sahara Complex, Sakchi,<br>
-                        Jamshedpur
+                        Flat/Door/Block No- KASHIDA, Ghatsila
+                        EAST SINGHHBHUM, Jharkhand
                     </div>
-                    
-                    <div class="registration">
-                        Registration: 7541/619/2011
+
+                    <div class="GST">
+                        GST No : 20AZWPB5827D1ZK
                     </div>
                     <div class="contact-info">
-                    <div class="contact-icon">
-                        <i class="fas fa-globe"></i> 
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-text">Work all over India</div>
                     </div>
-                    <div class="contact-text">Work all over India</div>
+                    <div class="registration">
+                        <i class="fas fa-clock"></i> Training: 10 AM to 7 PM
+                    </div>
+
                 </div>
-                <div class="registration">
-                    <i class="fas fa-clock"></i> Training: 10 AM to 7 PM
-                </div>
-                
-                </div>
-                
+
             </div>
-            
+
             <div class="footer">
                 <div class="contact-title">Contact Us</div>
                 <div class="contact-info">
                     <div class="contact-icon">
                         <i class="fas fa-phone"></i>
                     </div>
-                    <div class="contact-text">7979993535</div>
+                    <div class="contact-text"> 9955876455</div>
                 </div>
                 <div class="contact-info">
                     <div class="contact-icon">
-                        <i class="fas fa-envelope"></i> 
+                        <i class="fas fa-envelope"></i>
                     </div>
-                    <div class="contact-text">pragalibharat2011@gmail.com</div>
+                    <div class="contact-text">sarvashray1@gmail.com</div>
                 </div>
-                
+
             </div>
-            
+
             <div class="watermark">Kamna Charitable Trust</div>
         </div>
-        
+
         <!-- 3D Effect Elements -->
         <div class="card-edge"></div>
         <div class="card-bottom"></div>
@@ -360,14 +403,15 @@
         // Pause animation on hover
         const cardBody = document.querySelector('.card-body');
         const scrollContent = document.querySelector('.scroll-content');
-        
+
         cardBody.addEventListener('mouseenter', () => {
             scrollContent.classList.add('paused');
         });
-        
+
         cardBody.addEventListener('mouseleave', () => {
             scrollContent.classList.remove('paused');
         });
     </script>
 </body>
+
 </html>
