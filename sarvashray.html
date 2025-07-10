@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D Scrolling Business Card</title>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
@@ -59,7 +60,7 @@
         .card-header {
             padding: 10px;
             text-align: center;
-            background-color: rgba(236, 176, 136, 0.915);
+            background-color: rgb(225 181 92);
             position: relative;
             z-index: 2;
         }
@@ -106,8 +107,8 @@
             font-weight: 600;
             margin-bottom: 15px;
             text-align: center;
-            color: #ffeb3b;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            color: #352116;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
         }
 
         .address {
@@ -115,12 +116,21 @@
             line-height: 1.5;
             margin-bottom: 15px;
             text-align: center;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 4px 3px rgba(0, 0, 0, 0.2);
+        }
+        .about{
+            text-align: center;
+            color: #352116;
+            margin: 18px 0;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+            font-weight: 600;
+            transform: translateZ(15px);
         }
 
         .registration {
             font-size: 12px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(167, 116, 39, 0.086);
             padding: 8px;
             border-radius: 5px;
             text-align: center;
@@ -178,14 +188,14 @@
 
         .contact-icon {
             font-size: 16px;
-            color: #ffeb3b;
+            color: #352116;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
             transform: translateZ(10px);
             min-width: 20px;
         }
 
         .contact-text {
-            text-align: left;
+            text-align: center;
         }
 
         .training-hours {
@@ -198,10 +208,15 @@
         }
 
         .qr-text {
+            text-align: center;
             font-size: 12px;
             margin-top: 10px;
             font-style: italic;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .GST {
+            text-align: center;
         }
 
         .highlight {
@@ -209,9 +224,21 @@
             text-align: center;
             margin: 25px 0;
             font-weight: 600;
-            color: #ffeb3b;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            color: #352116;
+            text-shadow: 0 5px 8px rgba(66, 46, 15, 0.3);
             transform: translateZ(15px);
+        }
+
+        .demo-link-container {
+            text-align: center;
+            font-size: 12px;
+            color: #5e51e5;;
+            padding: 8px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            background-color: rgba(167, 116, 39, 0.086);
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
         }
 
         .watermark {
@@ -226,7 +253,7 @@
         /* 3D Effect Elements */
         .card-edge {
             position: absolute;
-            background: linear-gradient(90deg, #0d3a6b 0%, #14508e 100%);
+            background: linear-gradient(90deg, #ca9350 0%, #edbb7d 100%);
             width: 15px;
             height: 100%;
             right: -15px;
@@ -235,7 +262,7 @@
             transform-origin: left center;
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
-            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 5px 0 15px rgba(218, 164, 76, 0.2);
         }
 
         .card-bottom {
@@ -249,17 +276,17 @@
             transform-origin: center top;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgb(203, 162, 81);
         }
 
         .shadow {
             position: absolute;
             width: 80%;
             height: 30px;
-            background: radial-gradient(ellipse at center, rgba(232, 140, 54, 0.4) 0%, rgba(236, 195, 132, 0.711) 70%);
+            background: radial-gradient(ellipse at center, rgba(77, 45, 15, 0.179) 0%, rgba(116, 86, 42, 0.711) 70%);
             bottom: -40px;
             left: 10%;
-            filter: blur(5px);
+            filter: blur(8px);
             animation: shadow-pulse 6s ease-in-out infinite;
         }
 
@@ -316,7 +343,7 @@
 
             <div class="card-body">
                 <div class="scroll-content">
-                    <div class="org-name">Pragati Bharat Finance Hub</div>
+                    <div class="org-name">sarvashray</div>
 
                     <div class="address">
                         "Flat/Door/Block No- KASHIDA,"
@@ -326,8 +353,8 @@
                         "EAST SINGHHBHUM, Jharkhand"
                     </div>
 
-                    <div class="GST">
-                       GST No : 20AZWPB5827D1ZK
+                    <div class="about">
+                        Timely service with quality assurance
                     </div>
 
                     <div class="services">
@@ -343,18 +370,11 @@
                     <div class="highlight">
                         We are doing all the work 100%
                     </div>
-
                     <div class="qr-text">
                         Scan QR for more information
                     </div>
 
                     <!-- Duplicate content for continuous scroll -->
-                    <div class="org-name">Pragati Bharat Finance Hub</div>
-
-                    <div class="address">
-                        Flat/Door/Block No- KASHIDA, Ghatsila
-                        EAST SINGHHBHUM, Jharkhand
-                    </div>
 
                     <div class="GST">
                         GST No : 20AZWPB5827D1ZK
@@ -366,13 +386,16 @@
                         <div class="contact-text">Work all over India</div>
                     </div>
                     <div class="registration">
-                        <i class="fas fa-clock"></i> Training: 10 AM to 7 PM
+                        <i class="fas fa-clock"></i> Service providing: 10 AM to 7 PM
                     </div>
+                    <!-- Demo Link Container - Centered -->
+                    <div class="demo-link-container">
+                        <i class="fas fa-link"></i>
+                        <a href="https://gonu814.github.io/pocket_billing/" target="_blank">Pocket Billing System</a>
 
+                    </div>
                 </div>
-
             </div>
-
             <div class="footer">
                 <div class="contact-title">Contact Us</div>
                 <div class="contact-info">
@@ -390,7 +413,7 @@
 
             </div>
 
-            <div class="watermark">Kamna Charitable Trust</div>
+            <div class="watermark">sarvashray</div>
         </div>
 
         <!-- 3D Effect Elements -->
@@ -398,7 +421,8 @@
         <div class="card-bottom"></div>
         <div class="shadow"></div>
     </div>
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Pause animation on hover
         const cardBody = document.querySelector('.card-body');
