@@ -118,8 +118,7 @@
 
             if (formData) {
                 // Create receipt content from form data
-                let html = '';
-                
+                let html = '';   
                 // Personal Details
                 html += '<div class="receipt-row"><div class="receipt-label">Date of Joining:</div><div class="receipt-value">' + (formData.joiningDate || 'N/A') + '</div></div>';
                 html += '<div class="receipt-row"><div class="receipt-label">Full Name:</div><div class="receipt-value">' + (formData.fullName || 'N/A') + '</div></div>';
@@ -131,7 +130,7 @@
                 html += '<div class="receipt-row"><div class="receipt-label">Aadhaar:</div><div class="receipt-value">' + (formData.aadhaar || 'N/A') + '</div></div>';
                 html += '<div class="receipt-row"><div class="receipt-label">Pancard:</div><div class="receipt-value">' + (formData.pancard || 'N/A') + '</div></div>';
                 html += '<div class="receipt-row"><div class="receipt-label">Address:</div><div class="receipt-value">' + (formData.address || 'N/A') + '</div></div>';
-                
+              
                 // Bank Details
                 if (formData.bankName || formData.accountNumber || formData.ifscCode) {
                     html += '<div class="section-title" style="margin-top: 20px;">Bank Details</div>';
