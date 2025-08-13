@@ -24,12 +24,12 @@
         .logo-placeholder {
             height: 80px;
             margin-bottom: 10px;
-            background-color: #eee;
+            
             display: flex;
             align-items: center;
             justify-content: center;
             font-style: italic;
-            color: #666;
+            
         }
         
         .org-info {
@@ -166,7 +166,7 @@
 </head>
 <body>
     <div class="header">
-        <div class="logo-placeholder">SARVASHRAY LOGO</div>
+        <div class="logo-placeholder"><img src="Logo.jpg" alt="" width="100px"></div>
         <div class="org-info">
             <div>Registan No.:</div>
             <div>E-mail:</div>
@@ -221,7 +221,9 @@
             
             <div class="form-group">
                 <label for="mobile">Mobile Number</label>
-                <input type="tel" id="mobile" name="mobile" required>
+                <input type="tel" id="mobile" name="mobile"  pattern="\d{10}" maxlength="10" minlength="10"
+                          title="Enter a valid 10-digit phone number" required
+                          oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
             </div>
             
             <div class="form-group">
@@ -232,6 +234,10 @@
             <div class="form-group">
                 <label for="aadhaar">Aadhaar / ID Number</label>
                 <input type="text" id="aadhaar" name="aadhaar" required>
+            </div>
+             <div class="form-group">
+                <label for="aadhaar">Pancard / ID Number</label>
+                <input type="text" id="aadhaar" name="pancard" required>
             </div>
             
             <div class="form-group">
@@ -289,26 +295,7 @@
             </div>
         </div>
         
-        <div class="form-section">
-            <div class="section-title">7. Attachments Required</div>
-            
-            <div class="attachments">
-                <div class="attachment-item">
-                    <label for="photo">Passport Size Photo</label>
-                    <input type="file" id="photo" name="photo" accept="image/*">
-                </div>
-                
-                <div class="attachment-item">
-                    <label for="aadhaarProof">Aadhaar / ID Proof</label>
-                    <input type="file" id="aadhaarProof" name="aadhaarProof">
-                </div>
-                
-                <div class="attachment-item">
-                    <label for="addressProof">Address Proof</label>
-                    <input type="file" id="addressProof" name="addressProof">
-                </div>
-            </div>
-        </div>
+        
         
         <button type="submit" class="submit-btn">Submit Application</button>
     </form>
