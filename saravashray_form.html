@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,29 +15,29 @@
             padding: 20px;
             background-color: #f9f9f9;
         }
-        
+
         .header {
             text-align: center;
             margin-bottom: 30px;
             position: relative;
         }
-        
+
         .logo-placeholder {
             height: 80px;
             margin-bottom: 10px;
-            
+
             display: flex;
             align-items: center;
             justify-content: center;
             font-style: italic;
-            
+
         }
-        
+
         .org-info {
             margin-bottom: 20px;
             text-align: center;
         }
-        
+
         .form-title {
             text-align: center;
             font-size: 24px;
@@ -44,15 +45,15 @@
             margin: 20px 0;
             text-decoration: underline;
         }
-        
+
         .form-section {
             background-color: white;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        
+
         .section-title {
             font-weight: bold;
             margin-bottom: 15px;
@@ -60,17 +61,17 @@
             border-bottom: 1px solid #ddd;
             padding-bottom: 5px;
         }
-        
+
         .form-group {
             margin-bottom: 15px;
         }
-        
+
         label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
         }
-        
+
         input[type="text"],
         input[type="date"],
         input[type="email"],
@@ -83,39 +84,39 @@
             border-radius: 4px;
             box-sizing: border-box;
         }
-        
+
         .radio-group {
             display: flex;
             gap: 15px;
         }
-        
+
         .radio-option {
             display: flex;
             align-items: center;
         }
-        
+
         .radio-option input {
             margin-right: 5px;
         }
-        
+
         .bank-details {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 15px;
         }
-        
+
         .attachments {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 10px;
         }
-        
+
         .attachment-item {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-        
+
         .declaration {
             font-style: italic;
             margin: 20px 0;
@@ -123,20 +124,20 @@
             background-color: #f5f5f5;
             border-left: 3px solid #666;
         }
-        
+
         .signature {
             display: flex;
             justify-content: flex-end;
             margin-top: 30px;
         }
-        
+
         .signature-box {
             width: 300px;
             border-top: 1px solid #333;
             text-align: center;
             padding-top: 5px;
         }
-        
+
         .submit-btn {
             background-color: #4CAF50;
             color: white;
@@ -148,22 +149,23 @@
             display: block;
             margin: 30px auto;
         }
-        
+
         .submit-btn:hover {
             background-color: #45a049;
         }
-        
+
         @media (max-width: 600px) {
             .bank-details {
                 grid-template-columns: 1fr;
             }
-            
+
             .attachments {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="header">
         <div class="logo-placeholder"><img src="Logo.jpg" alt="" width="100px"></div>
@@ -176,136 +178,161 @@
         </div>
         <div class="form-title">Registration Form</div>
     </div>
-    
-    <form id="registrationForm">
+    <form action="https://script.google.com/macros/s/AKfycbwGczJczT0LrMzSrjc2ZJRW1oKaeoFijCK9wY5Su09vrIYgFdxKGG0678bXsNGedS8k3g/exec" method="post" id="billing_system">
         <div class="form-section">
-            <div class="section-title">1. Personal Details</div>
-            
-            <div class="form-group">
-                <label for="joiningDate">Date of Joining</label>
-                <input type="date" id="joiningDate" name="joiningDate">
-            </div>
-            
-            <div class="form-group">
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" name="fullName" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="fatherHusbandName">Father's / Husband's Name</label>
-                <input type="text" id="fatherHusbandName" name="fatherHusbandName" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="dob">Date of Birth</label>
-                <input type="date" id="dob" name="dob" required>
-            </div>
-            
-            <div class="form-group">
-                <label>Gender</label>
-                <div class="radio-group">
-                    <div class="radio-option">
-                        <input type="radio" id="male" name="gender" value="male" required>
-                        <label for="male">Male</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" id="female" name="gender" value="female">
-                        <label for="female">Female</label>
-                    </div>
-                    <div class="radio-option">
-                        <input type="radio" id="other" name="gender" value="other">
-                        <label for="other">Other</label>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="form-group">
-                <label for="mobile">Mobile Number</label>
-                <input type="tel" id="mobile" name="mobile"  pattern="\d{10}" maxlength="10" minlength="10"
-                          title="Enter a valid 10-digit phone number" required
-                          oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email ID</label>
-                <input type="email" id="email" name="email">
-            </div>
-            
-            <div class="form-group">
-                <label for="aadhaar">Aadhaar / ID Number</label>
-                <input type="text" id="aadhaar" name="aadhaar" required>
-            </div>
-             <div class="form-group">
-                <label for="aadhaar">Pancard / ID Number</label>
-                <input type="text" id="aadhaar" name="pancard" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="address">Permanent Address</label>
-                <textarea id="address" name="address" rows="3" required></textarea>
-            </div>
+        <div class="section-title">1. Personal Details</div>
+        <input type="hidden" name="Id" value="2"> 
+
+        <div class="form-group">
+            <label for="joiningDate">Date of Joining</label>
+            <input type="date" id="joiningDate" name="joiningDate" readonly>
         </div>
-        
-        <div class="form-section">
-            <div class="section-title">3. Bank Details (if applicable)</div>
-            
-            <div class="bank-details">
-                <div class="form-group">
-                    <label for="bankName">Bank Name</label>
-                    <input type="text" id="bankName" name="bankName">
+
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="fatherHusbandName">Father's / Husband's Name</label>
+            <input type="text" id="fatherHusbandName" name="fatherHusbandName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div class="form-group">
+            <label>Gender</label>
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
                 </div>
-                
-                <div class="form-group">
-                    <label for="accountNumber">Account Number</label>
-                    <input type="text" id="accountNumber" name="accountNumber">
+                <div class="radio-option">
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
                 </div>
-                
-                <div class="form-group">
-                    <label for="ifscCode">IFSC Code</label>
-                    <input type="text" id="ifscCode" name="ifscCode">
+                <div class="radio-option">
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
                 </div>
             </div>
         </div>
-        
-        <div class="form-section">
-            <div class="section-title">4. Referral / Sponsor Details (if applicable)</div>
-            
+
+        <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" pattern="\d{10}" maxlength="10" minlength="10"
+                title="Enter a valid 10-digit phone number" required
+                oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email ID</label>
+            <input type="email" id="email" name="email">
+        </div>
+
+        <div class="form-group">
+            <label for="aadhaar">Aadhaar / ID Number</label>
+            <input type="text" id="aadhaar" name="aadhaar" required>
+        </div>
+        <div class="form-group">
+            <label for="aadhaar">Pancard / ID Number</label>
+            <input type="text" id="aadhaar" name="pancard" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Permanent Address</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <div class="section-title">3. Bank Details (if applicable)</div>
+
+        <div class="bank-details">
             <div class="form-group">
-                <label for="referralName">Referral Name</label>
-                <input type="text" id="referralName" name="referralName">
+                <label for="bankName">Bank Name</label>
+                <input type="text" id="bankName" name="bankName">
             </div>
-            
+
             <div class="form-group">
-                <label for="referralId">Referral ID</label>
-                <input type="text" id="referralId" name="referralId">
+                <label for="accountNumber">Account Number</label>
+                <input type="text" id="accountNumber" name="accountNumber">
+            </div>
+
+            <div class="form-group">
+                <label for="ifscCode">IFSC Code</label>
+                <input type="text" id="ifscCode" name="ifscCode">
             </div>
         </div>
-        
-        <div class="form-section">
-            <div class="section-title">6. Declaration</div>
-            
-            <div class="declaration">
-                "I hereby declare that the above information is true to the best of my knowledge and I agree to abide by all the rules and regulations of the organization."
-            </div>
-            
-            <div class="signature">
-                <div class="signature-box">
-                    Signature of Applicant & Date
-                </div>
+    </div>
+
+    <div class="form-section">
+        <div class="section-title">4. Referral / Sponsor Details (if applicable)</div>
+
+        <div class="form-group">
+            <label for="referralName">Referral Name</label>
+            <input type="text" id="referralName" name="referralName">
+        </div>
+
+        <div class="form-group">
+            <label for="referralId">Referral ID</label>
+            <input type="text" id="referralId" name="referralId">
+        </div>
+    </div>
+
+    <div class="form-section">
+        <div class="section-title">6. Declaration</div>
+
+        <div class="declaration">
+            "I hereby declare that the above information is true to the best of my knowledge and I agree to abide by all
+            the rules and regulations of the organization."
+        </div>
+      <div class="form-group">
+            <label for="referralId">Transaction number</label>
+            <input type="text" id="referralId" name="transactionnumber">
+        </div>  
+
+        <div class="signature">
+            <div class="signature-box">
+                Signature of Applicant & Date
             </div>
         </div>
-        
-        
-        
-        <button type="submit" class="submit-btn">Submit Application</button>
+    </div>
+
+
+
+    <button type="submit" class="submit-btn" disabled>Submit Application</button>
     </form>
-    
+
+   
     <script>
-        document.getElementById('registrationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Form submitted successfully!');
-            // Here you would typically send the form data to a server
+    document.getElementById("billing_system").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Get form data
+    const formData = new FormData(this);
+    const dataObject = {};
+    formData.forEach((value, key) => dataObject[key] = value);
+    
+    // Save to localStorage
+    localStorage.setItem("formData", JSON.stringify(dataObject));
+
+    // Send to Google Sheets
+    fetch(this.action, { method: "POST", body: formData })
+        .then(res => res.json().catch(() => ({})))
+        .then(() => {
+            // Redirect to receipt page after success
+            window.location.href = "receipt.html";
+        })
+        .catch(err => {
+            alert("Submission failed.");
+            console.error(err);
         });
-    </script>
+});
+</script>
 </body>
+
 </html>
