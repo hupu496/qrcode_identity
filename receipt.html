@@ -92,9 +92,9 @@
     <div class="header">
         <div class="logo-placeholder"><img src="Logo.jpg" alt="" width="100px"></div>
         <div class="org-info">
-            <div>Registan No.:</div>
-            <div>E-mail:</div>
-            <div>Contact No.</div>
+            <div>Registan No.: 20AZWPB5827D1ZK</div>
+            <div>E-mail: sarvashray1@gmail.com</div>
+            <div>Contact No.: 9955876455</div>
             <div>Time 10 am to 5:30 pm</div>
             <div>Address: Lanka, Varanasi, U.P. -221005</div>
         </div>
@@ -120,6 +120,7 @@
                 // Create receipt content from form data
                 let html = '';   
                 // Personal Details
+                html += '<div class="receipt-row"><div class="receipt-label">Address:</div><div class="receipt-value">' + (formData.Id || 'N/A') + '</div></div>';
                 html += '<div class="receipt-row"><div class="receipt-label">Date of Joining:</div><div class="receipt-value">' + (formData.joiningDate || 'N/A') + '</div></div>';
                 html += '<div class="receipt-row"><div class="receipt-label">Full Name:</div><div class="receipt-value">' + (formData.fullName || 'N/A') + '</div></div>';
                 html += '<div class="receipt-row"><div class="receipt-label">Father/Husband Name:</div><div class="receipt-value">' + (formData.fatherHusbandName || 'N/A') + '</div></div>';
@@ -130,7 +131,6 @@
                 html += '<div class="receipt-row"><div class="receipt-label">Aadhaar:</div><div class="receipt-value">' + (formData.aadhaar || 'N/A') + '</div></div>';
                 html += '<div class="receipt-row"><div class="receipt-label">Pancard:</div><div class="receipt-value">' + (formData.pancard || 'N/A') + '</div></div>';
                 html += '<div class="receipt-row"><div class="receipt-label">Address:</div><div class="receipt-value">' + (formData.address || 'N/A') + '</div></div>';
-              
                 // Bank Details
                 if (formData.bankName || formData.accountNumber || formData.ifscCode) {
                     html += '<div class="section-title" style="margin-top: 20px;">Bank Details</div>';

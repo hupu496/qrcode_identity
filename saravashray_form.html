@@ -13,13 +13,14 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f9f9f9;
+            background-color: #fbf4e4;
         }
 
         .header {
             text-align: center;
             margin-bottom: 30px;
             position: relative;
+            font-weight: bold;
         }
 
         .logo-placeholder {
@@ -153,7 +154,27 @@
         .submit-btn:hover {
             background-color: #45a049;
         }
-
+        .registration-container {
+        position: relataive;
+        width: 100%;
+        min-height: 100vh;
+        
+    }
+    
+    .watermark {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        opacity: 0.2; /* Adjust opacity to make it subtle */
+        pointer-events: none; /* Allows clicks to go through */
+    }
+    
+    .watermark img {
+        width: 400px; /* Adjust size as needed */
+        height: auto;
+    }
         @media (max-width: 600px) {
             .bank-details {
                 grid-template-columns: 1fr;
@@ -166,26 +187,31 @@
     </style>
 </head>
 
-<body>
+<body class="registration-container">
+    <!-- Header (keeps original logo) -->
+     <div class="watermark">
+        <img src="Logo.jpg" alt="Organization Logo">
+    </div>
     <div class="header">
         <div class="logo-placeholder"><img src="Logo.jpg" alt="" width="100px"></div>
         <div class="org-info">
-            <div>Registan No.:</div>
-            <div>E-mail:</div>
-            <div>Contact No.</div>
-            <div>Time 10 am to 5:30 pm</div>
-            <div>Address: Lanka, Varanasi, U.P. -221005</div>
-        </div>
+    <div>Registan No.: 20AZWPB5827D1ZK</div>
+    <div>E-mail: sarvashray1@gmail.com</div>
+    <div>Contact No.: 9955876455</div>
+    <div>Time 10 am to 5:30 pm</div>
+    <div>Address: Lanka, Varanasi, Uttar Pradesh:221005</div>
+</div>
         <div class="form-title">Registration Form</div>
     </div>
     <form action="https://script.google.com/macros/s/AKfycbwGczJczT0LrMzSrjc2ZJRW1oKaeoFijCK9wY5Su09vrIYgFdxKGG0678bXsNGedS8k3g/exec" method="post" id="billing_system">
+        
         <div class="form-section">
         <div class="section-title">1. Personal Details</div>
-        <input type="hidden" name="Id" value="2"> 
+        <input type="hidden" name="Id" value="1"> 
 
         <div class="form-group">
             <label for="joiningDate">Date of Joining</label>
-            <input type="date" id="joiningDate" name="joiningDate" required>
+            <input type="date" id="joiningDate" name="joiningDate" readonly>
         </div>
 
         <div class="form-group">
@@ -235,7 +261,8 @@
 
         <div class="form-group">
             <label for="aadhaar">Aadhaar / ID Number</label>
-            <input type="text" id="aadhaar" name="aadhaar" required>
+            <input type="text" id="aadhaar" name="aadhaar" pattern="\d{12}" maxlength="12" minlength="12" title="Enter a valid 12-digit Aadhaar / ID Number" required
+             oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
         </div>
         <div class="form-group">
             <label for="aadhaar">Pancard / ID Number</label>
@@ -274,12 +301,12 @@
 
         <div class="form-group">
             <label for="referralName">Referral Name</label>
-            <input type="text" id="referralName" name="referralName">
+            <input type="text" id="referralName" name="referralName" required>
         </div>
 
         <div class="form-group">
             <label for="referralId">Referral ID</label>
-            <input type="text" id="referralId" name="referralId">
+            <input type="text" id="referralId" name="referralId" required>
         </div>
     </div>
 
@@ -292,7 +319,7 @@
         </div>
       <div class="form-group">
             <label for="referralId">Transaction number</label>
-            <input type="text" id="referralId" name="transactionnumber">
+            <input type="text" id="referralId" name="transactionnumber" required>
         </div>  
 
         <div class="signature">
@@ -306,7 +333,13 @@
 
     <button type="submit" class="submit-btn" disabled>Submit Application</button>
     </form>
-
+ <marquee behavior="scroll" direction="right" scrollamount="2" height="100" style="margin-top:10px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/3659/3659898.png" alt="TV" width="50" style="margin:5px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/15/15874.png" alt="Phone" width="50" style="margin:5px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="Scooter" width="50" style="margin:5px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png" alt="Laptop" width="50" style="margin:5px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/3474/3474366.png" alt="Camera" width="50" style="margin:5px;">
+    </marquee>
    
     <script>
     document.getElementById("billing_system").addEventListener("submit", function (e) {
@@ -332,6 +365,22 @@
             console.error(err);
         });
 });
+ // Set today's date as default for joining date
+    document.addEventListener('DOMContentLoaded', function() {
+        const today = new Date();
+        
+        // Format the date as YYYY-MM-DD (required for date input)
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        
+        const formattedDate = `${year}-${month}-${day}`;
+        document.getElementById('joiningDate').value = formattedDate;
+        
+        // Alternative using toISOString (for UTC date)
+        // const formattedDate = today.toISOString().split('T')[0];
+        // document.getElementById('joiningDate').value = formattedDate;
+    });
 </script>
 </body>
 
