@@ -105,7 +105,19 @@
             grid-template-columns: 1fr 1fr 1fr;
             gap: 15px;
         }
+  .payment-info {
+   display: flex;
+   justify-content: space-between; /* Pushes details left, QR right */
+   align-items: center; /* Vertically centers QR with text */
+   gap: 20px; /* Adds space between details and QR */
+}
+.bank-details {
+   text-align: left; /* Ensures left alignment */
+}
 
+.qr-code {
+   flex-shrink: 0; /* Prevents QR from shrinking */
+}
         .attachments {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -195,7 +207,7 @@
     <div class="header">
         <div class="logo-placeholder"><img src="Logo.jpg" alt="" width="100px"></div>
         <div class="org-info">
-    <div>Registan No.: 20AZWPB5827D1ZK</div>
+    <div>Registration No.: 20AZWPB5827D1ZK</div>
     <div>E-mail: sarvashray1@gmail.com</div>
     <div>Contact No.: 9955876455</div>
     <div>Time 10 am to 5:30 pm</div>
@@ -295,9 +307,24 @@
             </div>
         </div>
     </div>
-
+<div class="form-section">
+<div class="section-title">4. Payment Details</div>
+<div class="payment-container">
+<div class="bank-details">
+    <div class="payment-info">
+   <div><strong>SARVASHRAY</strong></div>
+    <div>Bank Of India</div>
+    <div>Account No.:593520110000226</div>
+    <div>IFSC: BKID0005935</div>
+    <div class="qr-code">
+      <img src="Qrcode.jpg"alt="Scan to Pay" width="100px">
+    </div>
+</div>
+  </div>
+  </div>
+   </div>
     <div class="form-section">
-        <div class="section-title">4. Referral / Sponsor Details (if applicable)</div>
+        <div class="section-title">5. Referral / Sponsor Details</div>
 
         <div class="form-group">
             <label for="referralName">Referral Name</label>
