@@ -200,16 +200,82 @@
         width: 400px; /* Adjust size as needed */
         height: auto;
     }
-        @media (max-width: 600px) {
-            .bank-details {
-                grid-template-columns: 1fr;
-            }
+        
+        @media (min-width: 320px) and (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
 
-            .attachments {
-                grid-template-columns: 1fr;
-            }
-        }
+  .header .logo-placeholder img {
+    width: 80px;
+  }
+
+  .form-title {
+    font-size: 20px;
+  }
+
+  .section-title {
+    font-size: 16px;
+  }
+
+  .payment-container {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+  }
+
+  .qr-code img {
+    width: 120px;
+    margin-top: 15px;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  .radio-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .signature-box {
+    width: 200px;
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .payment-info {
+    font-size: 13px;
+  }
+
+  .attachments {
+    grid-template-columns: 1fr;
+  }
+
+  .bank-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .marquee img {
+    max-width: 100%;
+    height: auto;
+  }
+}
     </style>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
 <body class="registration-container">
@@ -489,5 +555,6 @@ document.getElementById("referralId").addEventListener("blur", function() {
 </script>
 
 </body>
-
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </html>
