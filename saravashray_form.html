@@ -228,11 +228,11 @@
 </div>
         <div class="form-title">Registration Form</div>
     </div>
-    <form action="https://script.google.com/macros/s/AKfycbwb_Wf6C8CjwLGSdJvu8Muu3paPxMBODuEGWfUwyhdAqE23E4ycUbzejGvdmh98JDljAA/exec" method="post" id="billing_system">
+    <form action="https://script.google.com/macros/s/AKfycbwcDd87yxUs2DxbXCwRKkO-LD9KJC4cDegybfrdi7JSQn4A2w3Pr8AHUJXxCf_sIAiv/exec" method="post" id="billing_system">
         
         <div class="form-section">
         <div class="section-title">1. Personal Details</div>
-        <input type="hidden" name="Id" id="Id"> 
+        <input type="text" name="Id" id="Id"> 
 
         <div class="form-group">
             <label for="joiningDate">Date of Joining</label>
@@ -372,7 +372,7 @@
 
 
 
-    <button type="submit" class="submit-btn"  id="submitBtn"disabled >Submit Application</button>
+    <button type="submit" class="submit-btn"  id="submitBtn" >Submit Application</button>
     </form>
  <marquee behavior="scroll" direction="right" scrollamount="2" height="100" style="margin-top:10px;">
         <img src="marquee.png" alt="TV">
@@ -426,7 +426,7 @@
 
 
 <script>
-const apiUrl = "https://script.google.com/macros/s/AKfycbwb_Wf6C8CjwLGSdJvu8Muu3paPxMBODuEGWfUwyhdAqE23E4ycUbzejGvdmh98JDljAA/exec";
+const apiUrl = "https://script.google.com/macros/s/AKfycbwcDd87yxUs2DxbXCwRKkO-LD9KJC4cDegybfrdi7JSQn4A2w3Pr8AHUJXxCf_sIAiv/exec";
 
 // Get last Id and set hidden input
 fetch(apiUrl)
@@ -443,42 +443,41 @@ fetch(apiUrl)
     console.error("Error fetching last Id:", err);
     document.getElementById("Id").value = 1; // fallback
   });
+//  const referralIdInput = document.getElementById("referralId");
+// const referralNameInput = document.getElementById("referralName");
+// const submitBtn = document.getElementById("submitBtn");
 
-  const referralIdInput = document.getElementById("referralId");
-const referralNameInput = document.getElementById("referralName");
-const submitBtn = document.getElementById("submitBtn");
+// // disable submit by default
+// submitBtn.disabled = true;
 
-// disable submit by default
-submitBtn.disabled = true;
+// // When user types referralId, check Google Sheet
+// referralIdInput.addEventListener("input", () => {
+//   const enteredId = referralIdInput.value.trim();
+//   referralNameInput.value = "";  
+//   submitBtn.disabled = true;  
 
-// When user types referralId, check Google Sheet
-referralIdInput.addEventListener("input", () => {
-  const enteredId = referralIdInput.value.trim();
-  referralNameInput.value = "";  
-  submitBtn.disabled = true;  
+//   if (enteredId === "") return;
 
-  if (enteredId === "") return;
+//   fetch(apiUrl)
+//     .then(res => res.json())
+//     .then(data => {
+//       // Find if Referral ID exists
+//       const found = data.find(row => row.referid == enteredId);
 
-  fetch(apiUrl)
-    .then(res => res.json())
-    .then(data => {
-      // Find if Referral ID exists
-      const found = data.find(row => row.referid == enteredId);
-
-      if (found) {
-        referralNameInput.value = found.fullname; // sheet column "fullname"
-        submitBtn.disabled = false;
-      } else {
-        referralNameInput.value = "Not Available";
-        submitBtn.disabled = true;
-      }
-    })
-    .catch(err => {
-      console.error("Error:", err);
-      referralNameInput.value = "Error loading data";
-      submitBtn.disabled = true;
-    });
-});
+//       if (found) {
+//         referralNameInput.value = found.fullname; // sheet column "fullname"
+//         submitBtn.disabled = false;
+//       } else {
+//         referralNameInput.value = "Not Available";
+//         submitBtn.disabled = true;
+//       }
+//     })
+//     .catch(err => {
+//       console.error("Error:", err);
+//       referralNameInput.value = "Error loading data";
+//       submitBtn.disabled = true;
+//     });
+// });
 </script>
 
 </body>
