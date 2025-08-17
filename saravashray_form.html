@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SARVASHRAY Registration Form</title>
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -155,16 +156,7 @@
         min-height: 100vh;
         
     }
-    .payment-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 500px; /* optional for controlling width */
-  margin: 20px auto;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
+  
 
 .payment-info {
   font-size: 14px;
@@ -200,82 +192,9 @@
         width: 400px; /* Adjust size as needed */
         height: auto;
     }
-        
-        @media (min-width: 320px) and (max-width: 768px) {
-  body {
-    padding: 10px;
-  }
 
-  .header .logo-placeholder img {
-    width: 80px;
-  }
-
-  .form-title {
-    font-size: 20px;
-  }
-
-  .section-title {
-    font-size: 16px;
-  }
-
-  .payment-container {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: center;
-  }
-
-  .qr-code img {
-    width: 120px;
-    margin-top: 15px;
-  }
-
-  input[type="text"],
-  input[type="date"],
-  input[type="email"],
-  input[type="tel"],
-  textarea,
-  select {
-    font-size: 14px;
-    padding: 6px;
-  }
-
-  .radio-group {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .signature-box {
-    width: 200px;
-    font-size: 14px;
-  }
-
-  .submit-btn {
-    width: 100%;
-    font-size: 15px;
-    padding: 12px;
-  }
-
-  .payment-info {
-    font-size: 13px;
-  }
-
-  .attachments {
-    grid-template-columns: 1fr;
-  }
-
-  .bank-details {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .marquee img {
-    max-width: 100%;
-    height: auto;
-  }
-}
     </style>
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  
 </head>
 
 <body class="registration-container">
@@ -389,21 +308,26 @@
     </div>
 <div class="form-section">
 <div class="section-title">4. Payment Details</div>
-<div class="payment-container">
-  <div class="payment-info">
-    <strong>SARVASHRAY</strong>
-    <div>Bank Of India</div>
-    <div>Account No.: 593520110000226</div>
-    <div>IFSC: BKID0005935</div>
-    
-  </div>
-  
-  <div class="qr-code">
-    <img src="Qrcode.jpg" alt="Scan to Pay">
-  </div>
+<div class="container my-3">
+  <div class="row align-items-center">
+    <!-- Bank Details -->
+    <div class="col-md-8 col-12 mb-3 mb-md-0">
+      <div class="payment-info">
+        <strong>SARVASHRAY</strong><br>
+        <span>Bank Of India</span><br>
+        <span>Account No.: 593520110000226</span><br>
+        <span>IFSC: BKID0005935</span>
+      </div>
+    </div>
 
-  
+    <!-- QR Code -->
+    <div class="col-md-4 col-12 text-md-end text-center">
+      <div class="qr-code">
+        <img src="Qrcode.jpg" alt="Scan to Pay" class="img-fluid" style="max-width:150px;">
+      </div>
+    </div>
   </div>
+</div>
    </div>
     <div class="form-section">
         <div class="section-title">5. Referral / Sponsor Details</div>
