@@ -232,7 +232,8 @@
         
         <div class="form-section">
         <div class="section-title">1. Personal Details</div>
-        <input type="text" name="Id" id="Id"> 
+        <input type="hidden" name="Id" id="Id"> 
+        <input type="hidden" name="refercode" id="assigncode" readonly>
 
         <div class="form-group">
             <label for="joiningDate">Date of Joining</label>
@@ -328,6 +329,7 @@
     <div>Bank Of India</div>
     <div>Account No.: 593520110000226</div>
     <div>IFSC: BKID0005935</div>
+    
   </div>
   
   <div class="qr-code">
@@ -342,7 +344,8 @@
 
          <div class="form-group">
       <label for="referralId">Referral ID</label>
-      <input type="text" id="referralId" name="referralId" required>
+      <input type="text" id="referralId"  required>
+      <input type="hidden" id="referral" name="referralId" required readonly>
     </div>
 
     <div class="form-group">
@@ -372,7 +375,9 @@
 
 
 
-    <button type="submit" class="submit-btn"  id="submitBtn" >Submit Application</button>
+    <button type="submit" class="submit-btn" id="submitBtn" disabled>
+    Submit Application
+</button>
     </form>
  <marquee behavior="scroll" direction="right" scrollamount="2" height="100" style="margin-top:10px;">
         <img src="marquee.png" alt="TV">
@@ -432,52 +437,55 @@ const apiUrl = "https://script.google.com/macros/s/AKfycbwcDd87yxUs2DxbXCwRKkO-L
 fetch(apiUrl)
   .then(res => res.json())
   .then(data => {
+    let newId;
     if (data.length > 0) {
       let lastId = parseInt(data[data.length - 1].Id || 0);
-      document.getElementById("Id").value = lastId + 1;
+      newId = lastId + 1;
     } else {
-      document.getElementById("Id").value = 1;
+      newId = 1;
     }
+
+    // Set ID field
+    document.getElementById("Id").value = newId;
+
+    // Generate Assign Code like SAR-1, SAR-2
+    document.getElementById("assigncode").value = "SAR-" + newId;
   })
   .catch(err => {
     console.error("Error fetching last Id:", err);
-    document.getElementById("Id").value = 1; // fallback
+
+    // fallback values
+    document.getElementById("Id").value = 1;
+    document.getElementById("assigncode").value = "SAR-1";
   });
-//  const referralIdInput = document.getElementById("referralId");
-// const referralNameInput = document.getElementById("referralName");
-// const submitBtn = document.getElementById("submitBtn");
+document.getElementById("referralId").addEventListener("blur", function() {
+    let enteredCode = this.value.trim();
 
-// // disable submit by default
-// submitBtn.disabled = true;
+    if (enteredCode === "") return;
 
-// // When user types referralId, check Google Sheet
-// referralIdInput.addEventListener("input", () => {
-//   const enteredId = referralIdInput.value.trim();
-//   referralNameInput.value = "";  
-//   submitBtn.disabled = true;  
+    fetch(apiUrl)
+        .then(res => res.json())
+        .then(data => {
+            // Find row with matching refercode
+            let record = data.find(row => row.refercode == enteredCode);
 
-//   if (enteredId === "") return;
-
-//   fetch(apiUrl)
-//     .then(res => res.json())
-//     .then(data => {
-//       // Find if Referral ID exists
-//       const found = data.find(row => row.referid == enteredId);
-
-//       if (found) {
-//         referralNameInput.value = found.fullname; // sheet column "fullname"
-//         submitBtn.disabled = false;
-//       } else {
-//         referralNameInput.value = "Not Available";
-//         submitBtn.disabled = true;
-//       }
-//     })
-//     .catch(err => {
-//       console.error("Error:", err);
-//       referralNameInput.value = "Error loading data";
-//       submitBtn.disabled = true;
-//     });
-// });
+            if (record) {
+                // Fill target inputs
+                document.getElementById("referral").value = record.Id;
+                document.getElementById("referralName").value = record.fullName;
+                document.getElementById("submitBtn").disabled = false;
+            } else {
+                alert("Referral Code not found!");
+                document.getElementById("referral").value = "";
+                document.getElementById("referralName").value = "";
+                document.getElementById("submitBtn").disabled = true;
+            }
+        })
+        .catch(err => {
+            console.error("Error fetching referral data:", err);
+            document.getElementById("submitBtn").disabled = true;
+        });
+});
 </script>
 
 </body>

@@ -120,17 +120,11 @@
                 // Create receipt content from form data
                 let html = '';   
                 // Personal Details
-                html += '<div class="receipt-row"><div class="receipt-label">Address:</div><div class="receipt-value">' + (formData.Id || 'N/A') + '</div></div>';
+               
                 html += '<div class="receipt-row"><div class="receipt-label">Date of Joining:</div><div class="receipt-value">' + (formData.joiningDate || 'N/A') + '</div></div>';
                 html += '<div class="receipt-row"><div class="receipt-label">Full Name:</div><div class="receipt-value">' + (formData.fullName || 'N/A') + '</div></div>';
-                html += '<div class="receipt-row"><div class="receipt-label">Father/Husband Name:</div><div class="receipt-value">' + (formData.fatherHusbandName || 'N/A') + '</div></div>';
-                html += '<div class="receipt-row"><div class="receipt-label">Date of Birth:</div><div class="receipt-value">' + (formData.dob || 'N/A') + '</div></div>';
-                html += '<div class="receipt-row"><div class="receipt-label">Gender:</div><div class="receipt-value">' + (formData.gender || 'N/A') + '</div></div>';
                 html += '<div class="receipt-row"><div class="receipt-label">Mobile:</div><div class="receipt-value">' + (formData.mobile || 'N/A') + '</div></div>';
-                html += '<div class="receipt-row"><div class="receipt-label">Email:</div><div class="receipt-value">' + (formData.email || 'N/A') + '</div></div>';
-                html += '<div class="receipt-row"><div class="receipt-label">Aadhaar:</div><div class="receipt-value">' + (formData.aadhaar || 'N/A') + '</div></div>';
-                html += '<div class="receipt-row"><div class="receipt-label">Pancard:</div><div class="receipt-value">' + (formData.pancard || 'N/A') + '</div></div>';
-                html += '<div class="receipt-row"><div class="receipt-label">Address:</div><div class="receipt-value">' + (formData.address || 'N/A') + '</div></div>';
+                
                 // Bank Details
                 if (formData.bankName || formData.accountNumber || formData.ifscCode) {
                     html += '<div class="section-title" style="margin-top: 20px;">Bank Details</div>';
@@ -143,7 +137,7 @@
                 if (formData.referralName || formData.referralId) {
                     html += '<div class="section-title" style="margin-top: 20px;">Referral Details</div>';
                     html += '<div class="receipt-row"><div class="receipt-label">Referral Name:</div><div class="receipt-value">' + (formData.referralName || 'N/A') + '</div></div>';
-                    html += '<div class="receipt-row"><div class="receipt-label">Referral ID:</div><div class="receipt-value">' + (formData.referralId || 'N/A') + '</div></div>';
+                    html += '<div class="receipt-row"><div class="receipt-label">Referral ID:</div><div class="receipt-value">' + (formData.refercode || 'N/A') + '</div></div>';
                 }
                 
                 // Add timestamp
