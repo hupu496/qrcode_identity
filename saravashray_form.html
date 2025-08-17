@@ -100,24 +100,7 @@
             margin-right: 5px;
         }
 
-        .bank-details {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 15px;
-        }
-  .payment-info {
-   display: flex;
-   justify-content: space-between; /* Pushes details left, QR right */
-   align-items: center; /* Vertically centers QR with text */
-   gap: 20px; /* Adds space between details and QR */
-}
-.bank-details {
-   text-align: left; /* Ensures left alignment */
-}
-
-.qr-code {
-   flex-shrink: 0; /* Prevents QR from shrinking */
-}
+      
         .attachments {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -172,6 +155,36 @@
         min-height: 100vh;
         
     }
+    .payment-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 500px; /* optional for controlling width */
+  margin: 20px auto;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.payment-info {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.payment-info strong {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.qr-code img {
+  width: 150px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 4px;
+  background: #fff;
+}
     
     .watermark {
         position: fixed;
@@ -215,11 +228,11 @@
 </div>
         <div class="form-title">Registration Form</div>
     </div>
-    <form action="https://script.google.com/macros/s/AKfycbwGczJczT0LrMzSrjc2ZJRW1oKaeoFijCK9wY5Su09vrIYgFdxKGG0678bXsNGedS8k3g/exec" method="post" id="billing_system">
+    <form action="https://script.google.com/macros/s/AKfycbwb_Wf6C8CjwLGSdJvu8Muu3paPxMBODuEGWfUwyhdAqE23E4ycUbzejGvdmh98JDljAA/exec" method="post" id="billing_system">
         
         <div class="form-section">
         <div class="section-title">1. Personal Details</div>
-        <input type="hidden" name="Id" value="1"> 
+        <input type="hidden" name="Id" id="Id"> 
 
         <div class="form-group">
             <label for="joiningDate">Date of Joining</label>
@@ -310,31 +323,32 @@
 <div class="form-section">
 <div class="section-title">4. Payment Details</div>
 <div class="payment-container">
-<div class="bank-details">
-    <div class="payment-info">
-   <div><strong>SARVASHRAY</strong></div>
+  <div class="payment-info">
+    <strong>SARVASHRAY</strong>
     <div>Bank Of India</div>
-    <div>Account No.:593520110000226</div>
+    <div>Account No.: 593520110000226</div>
     <div>IFSC: BKID0005935</div>
-    <div class="qr-code">
-      <img src="Qrcode.jpg"alt="Scan to Pay" width="100px">
-    </div>
-</div>
   </div>
+  
+  <div class="qr-code">
+    <img src="Qrcode.jpg" alt="Scan to Pay">
+  </div>
+
+  
   </div>
    </div>
     <div class="form-section">
         <div class="section-title">5. Referral / Sponsor Details</div>
 
-        <div class="form-group">
-            <label for="referralName">Referral Name</label>
-            <input type="text" id="referralName" name="referralName" required>
-        </div>
+         <div class="form-group">
+      <label for="referralId">Referral ID</label>
+      <input type="text" id="referralId" name="referralId" required>
+    </div>
 
-        <div class="form-group">
-            <label for="referralId">Referral ID</label>
-            <input type="text" id="referralId" name="referralId" required>
-        </div>
+    <div class="form-group">
+      <label for="referralName">Referral Name</label>
+      <input type="text" id="referralName" name="referralName" readonly>
+    </div>
     </div>
 
     <div class="form-section">
@@ -358,14 +372,14 @@
 
 
 
-    <button type="submit" class="submit-btn" disabled>Submit Application</button>
+    <button type="submit" class="submit-btn"  id="submitBtn"disabled >Submit Application</button>
     </form>
  <marquee behavior="scroll" direction="right" scrollamount="2" height="100" style="margin-top:10px;">
+        <img src="marquee.png" alt="TV">
         <img src="https://cdn-icons-png.flaticon.com/512/3659/3659898.png" alt="TV" width="50" style="margin:5px;">
         <img src="https://cdn-icons-png.flaticon.com/512/15/15874.png" alt="Phone" width="50" style="margin:5px;">
-        <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="Scooter" width="50" style="margin:5px;">
         <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png" alt="Laptop" width="50" style="margin:5px;">
-        <img src="https://cdn-icons-png.flaticon.com/512/3474/3474366.png" alt="Camera" width="50" style="margin:5px;">
+       
     </marquee>
    
     <script>
@@ -409,6 +423,64 @@
         // document.getElementById('joiningDate').value = formattedDate;
     });
 </script>
+
+
+<script>
+const apiUrl = "https://script.google.com/macros/s/AKfycbwb_Wf6C8CjwLGSdJvu8Muu3paPxMBODuEGWfUwyhdAqE23E4ycUbzejGvdmh98JDljAA/exec";
+
+// Get last Id and set hidden input
+fetch(apiUrl)
+  .then(res => res.json())
+  .then(data => {
+    if (data.length > 0) {
+      let lastId = parseInt(data[data.length - 1].Id || 0);
+      document.getElementById("Id").value = lastId + 1;
+    } else {
+      document.getElementById("Id").value = 1;
+    }
+  })
+  .catch(err => {
+    console.error("Error fetching last Id:", err);
+    document.getElementById("Id").value = 1; // fallback
+  });
+
+  const referralIdInput = document.getElementById("referralId");
+const referralNameInput = document.getElementById("referralName");
+const submitBtn = document.getElementById("submitBtn");
+
+// disable submit by default
+submitBtn.disabled = true;
+
+// When user types referralId, check Google Sheet
+referralIdInput.addEventListener("input", () => {
+  const enteredId = referralIdInput.value.trim();
+  referralNameInput.value = "";  
+  submitBtn.disabled = true;  
+
+  if (enteredId === "") return;
+
+  fetch(apiUrl)
+    .then(res => res.json())
+    .then(data => {
+      // Find if Referral ID exists
+      const found = data.find(row => row.referid == enteredId);
+
+      if (found) {
+        referralNameInput.value = found.fullname; // sheet column "fullname"
+        submitBtn.disabled = false;
+      } else {
+        referralNameInput.value = "Not Available";
+        submitBtn.disabled = true;
+      }
+    })
+    .catch(err => {
+      console.error("Error:", err);
+      referralNameInput.value = "Error loading data";
+      submitBtn.disabled = true;
+    });
+});
+</script>
+
 </body>
 
 </html>
