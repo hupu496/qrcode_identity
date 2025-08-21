@@ -49,7 +49,7 @@
         }
         
         .card-header {
-            padding: 25px;
+            padding: 14px;
             text-align: center;
             background-color: rgba(0, 0, 0, 0.1);
             position: relative;
@@ -57,7 +57,7 @@
         }
         
         .logo {
-            font-size: 24px;
+            font-size: 17px;
             font-weight: 700;
             margin-bottom: 5px;
             color: #fff;
@@ -65,7 +65,7 @@
         }
         
         .tagline {
-            font-size: 14px;
+            font-size: 11px;
             opacity: 0.9;
             margin-bottom: 15px;
             text-shadow: 0 1px 3px rgba(0,0,0,0.2);
@@ -158,7 +158,7 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-bottom: 10px;
+            margin-bottom: 1px;
             align-items: center;
         }
         
@@ -280,11 +280,68 @@
             color: #ffeb3b;
             text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
+        
+        /* Bouncing Ball CSS */
+        .bouncing-ball {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle at 30% 30%, #ffeb3b, #ff9800);
+            border-radius: 50%;
+            z-index: 10;
+            box-shadow: 0 0 10px rgba(255, 235, 59, 0.7);
+            animation: bounce 2s infinite cubic-bezier(0.280, 0.840, 0.420, 0.880);
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) scale(1, 1);
+            }
+            40% {
+                transform: translateY(-30px) scale(1.1, 0.9);
+            }
+            60% {
+                transform: translateY(-15px) scale(1, 1);
+            }
+        }
+        
+        .ball-shadow {
+            position: absolute;
+            top: 40px;
+            right: 20px;
+            width: 10px;
+            height: 5px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            z-index: 9;
+            animation: shadow 2s infinite cubic-bezier(0.280, 0.840, 0.420, 0.880);
+        }
+        
+        @keyframes shadow {
+            0%, 20%, 50%, 80%, 100% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            40% {
+                transform: scale(0.5);
+                opacity: 0.3;
+            }
+            60% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="card-container">
         <div class="business-card">
+            <!-- Bouncing Ball Elements -->
+            <div class="bouncing-ball"></div>
+            <div class="ball-shadow"></div>
+            
             <div class="card-header">
                 <div class="logo">SWARNABHA MARKETING PVT LTD</div>
                 <div class="tagline">EK PARIVARTAN GLOBAL MARKETING SAMAY KA SATH</div>
@@ -318,6 +375,42 @@
                     
                     <div class="service-category">Construction & Infrastructure</div>
                     <div class="service-list">Building construction, Chimney bricks</div>
+                     <div class="service-category">एक गाडी खरीदने पर SCARTCH CARD की सुविधा ।</div>
+                    <div class="service-list">Agricultural activity 300 Coupon.</div>
+                    <div class="service-list">All electrical items 500 Coupon.</div>
+                    <div class="service-list">All types of finance available 500 Coupon.</div>
+                    <div class="service-list">Ayurvedic shop 200 Coupon.</div>
+                    <div class="service-list">Blazer set 500 Coupon.</div>
+                    <div class="service-list">Car 100 Coupon.</div>
+                    <div class="service-list">Clothing Stitching & Manufacturing Plant 2 Coupon.</div>
+                    <div class="service-list">Collage/school one years due 300 Coupon.</div>
+                    <div class="service-list">Computer/Laptop 250 Coupon..</div>
+                    <div class="service-list">Cooking oil/refined Dil 2 Coupon.</div>
+                    <div class="service-list">Cooler 500 Coupon.</div>
+                    <div class="service-list">Copy/book 500 Coupon.</div>
+                    <div class="service-list">Cycle 500 Coupon.</div>
+                    <div class="service-list">Diwan bed 100 Coupon.</div>
+                    <div class="service-list">E-bike 100 Coupon.</div>
+                    <div class="service-list">E-car 100 Coupon.</div>
+                    <div class="service-list">Electricity bill 1 years 500 Coupon.</div>
+                    <div class="service-list">Elmira 500 Coupon.</div>
+                    <div class="service-list">Expensive Wall Clock 500 Coupon.</div>
+                    <div class="service-list">Gas stove füll set 500.</div>
+                    <div class="service-list">Gold jewelry 500 Coupon.</div>
+                    <div class="service-list">Home/houses 20 Coupon.</div>
+                    <div class="service-list">Inverter 500 Coupon.</div>
+                    <div class="service-list">Lather/Nylon Factory 3 Coupon.</div>
+                    <div class="service-list">LED/LCD TV 400. Coupon.</div>
+                    <div class="service-list">Mobile recharge one years 500.</div>
+                    <div class="service-list">Mobile/bikes repairing center 300 Coupon.</div>
+                    <div class="service-list">Motor cycle 100 Coupon.</div>
+                    <div class="service-list">Newspaper bill one years 500 Coupon.</div>
+                    <div class="service-list">One year raasan 500 Coupon.</div>
+                    <div class="service-list">One years petrol 500 Coupon.</div>
+                    <div class="service-list">Own Camera/Photography Business 200 Coupon.</div>
+                    <div class="service-list">Paper Mill 5 Coupon..</div>
+                    
+
                     
                     <div class="highlight">
                         We are doing all the work 100%
