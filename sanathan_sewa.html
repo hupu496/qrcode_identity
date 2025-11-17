@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>श्री श्री सनातन सेवा संस्थान | Registration Form</title>
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fbf4e4;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            font-weight: bold;
+        }
+
+        .logo-placeholder {
+            height: 80px;
+            margin-bottom: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+
+        }
+
+        .org-info {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            text-decoration: underline;
+        }
+
+        .form-section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 18px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+        }
+
+        .radio-option input {
+            margin-right: 5px;
+        }
+
+      
+        .attachments {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .attachment-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .declaration {
+            font-style: italic;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-left: 3px solid #666;
+        }
+
+        .signature {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 30px;
+        }
+
+        .signature-box {
+            width: 300px;
+            border-top: 1px solid #333;
+            text-align: center;
+            padding-top: 5px;
+        }
+
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .registration-container {
+        position: relataive;
+        width: 100%;
+        min-height: 100vh;
+        
+    }
+  
+
+.payment-info {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.payment-info strong {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.qr-code img {
+  width: 150px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 4px;
+  background: #fff;
+}
+    
+    .watermark {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        opacity: 0.2; /* Adjust opacity to make it subtle */
+        pointer-events: none; /* Allows clicks to go through */
+    }
+    
+    .watermark img {
+        width: 400px; /* Adjust size as needed */
+        height: auto;
+    }
+
+    </style>
+  
+</head>
+
+<body class="registration-container">
+    <!-- Header (keeps original logo) -->
+     <div class="watermark">
+        <img src="sewa_logo.png" alt="Organization Logo">
+    </div>
+    <div class="header">
+        <div class="logo-placeholder"><img src="sewa_logo.png" alt="" width="100px"></div>
+        <div class="org-info">
+    <div>श्री श्री सनातन सेवा संस्थान </div>
+    <div>पंजीकरण संख्या : 2022/GHA/1903/BK4/43</div>
+    <div>ई-मेल : srisrisanatansevasansthan2022@gmail.com</div>
+    <div>संपर्क संख्या : 9955876455</div>
+    
+    <div>पता : मारवाड़ी धर्मशाला के पास, पूर्वी सिंहभूम, घाटशिला, झारखंड – 832303</div>
+</div>
+        <div class="form-title">पंजीकरण फॉर्म</div>
+    </div>
+    <form action="https://script.google.com/macros/s/AKfycbzLowcWKLEAUh4rOJehMwWBqpqpXuf_wGq6FtF9TwHuc1wEMX5cCe8A-rq2xFKFj5KLEA/exec" method="post" id="billing_system">
+        
+        <div class="form-section">
+        <div class="section-title">1. व्यक्तिगत विवरण</div>
+        <input type="hidden" name="Id" id="Id"> 
+        <input type="hidden" name="refercode" id="assigncode" readonly>
+
+        <div class="form-group">
+            <label for="joiningDate">ज्वाइनिंग तिथि</label>
+            <input type="date" id="joiningDate" name="joiningDate" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="fullName">पूरा नाम</label>
+            <input type="text" id="fullName" name="fullName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="fatherHusbandName">पिता / पति का नाम</label>
+            <input type="text" id="fatherHusbandName" name="fatherHusbandName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">जन्म तिथि</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div class="form-group">
+            <label>लिंग</label>
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" id="male" name="gender" value="पुरुष" required>
+                    <label for="male">पुरुष</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="female" name="gender" value="महिला">
+                    <label for="female">महिला</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="other" name="gender" value="अन्य">
+                    <label for="other">अन्य</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="mobile">मोबाइल नंबर</label>
+            <input type="tel" id="mobile" name="mobile" pattern="\d{10}" maxlength="10" minlength="10"
+                title="कृपया 10 अंकों का मोबाइल नंबर दर्ज करें" required
+                oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">ईमेल आईडी</label>
+            <input type="email" id="email" name="email">
+        </div>
+
+        <div class="form-group">
+            <label for="aadhaar">आधार / पहचान संख्या</label>
+            <input type="text" id="aadhaar" name="aadhaar" pattern="\d{12}" maxlength="12" minlength="12" title="कृपया 12 अंकों का आधार नंबर दर्ज करें" required
+             oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
+        </div>
+        <div class="form-group">
+            <label for="aadhaar">पैनकार्ड / अन्य आईडी नंबर</label>
+            <input type="text" id="aadhaar" name="pancard" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">स्थायी पता</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <div class="section-title">3. बैंक विवरण (यदि लागू हो)</div>
+
+        <div class="bank-details">
+            <div class="form-group">
+                <label for="bankName">बैंक का नाम</label>
+                <input type="text" id="bankName" name="bankName">
+            </div>
+
+            <div class="form-group">
+                <label for="accountNumber">खाता संख्या</label>
+                <input type="text" id="accountNumber" name="accountNumber">
+            </div>
+
+            <div class="form-group">
+                <label for="ifscCode">आईएफएससी कोड</label>
+                <input type="text" id="ifscCode" name="ifscCode">
+            </div>
+        </div>
+    </div>
+<div class="form-section">
+<div class="section-title">4. भुगतान विवरण</div>
+<div class="container my-3">
+  <div class="row align-items-center">
+    <!-- Bank Details -->
+    <div class="col-md-8 col-12 mb-3 mb-md-0">
+      <div class="payment-info">
+        <strong>श्री श्री सनातन सेवा संस्थान</strong><br>
+        <span>Bank Of India</span><br>
+        <span>खाता संख्या.: 45132011000578</span><br>
+        <span>आईएफएससी: BKID0004513</span>
+      </div>
+    </div>
+
+    <!-- QR Code -->
+    <div class="col-md-4 col-12 text-md-end text-center">
+      <div class="qr-code">
+        <img src="qrcode_sewa.png" alt="Scan to Pay" class="img-fluid" style="max-width:150px;">
+      </div>
+    </div>
+  </div>
+</div>
+   </div>
+    <div class="form-section">
+        <div class="section-title">5.  रेफरल / स्पॉन्सर विवरण</div>
+
+         <div class="form-group">
+      <label for="referralId">रेफरल आईडी</label>
+      <input type="text" id="referralId"  required>
+      <input type="hidden" id="referral" name="referralId" required readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="referralName">रेफरल का नाम</label>
+      <input type="text" id="referralName" name="referralName" readonly>
+    </div>
+    </div>
+
+    <div class="form-section">
+        <div class="section-title">6. घोषणा</div>
+
+        <div class="declaration">
+            "मैं hereby घोषणा करता/करती हूँ कि ऊपर दी गई सभी जानकारी मेरे ज्ञान के अनुसार सही है। तथा मैं संस्था के सभी नियमों एवं शर्तों का पालन करूँगा/करूँगी।"
+        </div>
+      <div class="form-group">
+            <label for="referralId">लेनदेन संख्या</label>
+            <input type="text" id="referralId" name="transactionnumber" required>
+        </div>  
+
+        <div class="signature">
+            <div class="signature-box">
+                 आवेदक के हस्ताक्षर एवं तिथि
+            </div>
+        </div>
+    </div>
+
+
+
+    <button type="submit" class="submit-btn" id="submitBtn" disabled>
+    आवेदन जमा करें
+</button>
+    </form>
+ <!-- <marquee behavior="scroll" direction="right" scrollamount="2" height="100" style="margin-top:10px;">
+        <img src="marquee.png" alt="TV">
+        <img src="https://cdn-icons-png.flaticon.com/512/3659/3659898.png" alt="TV" width="50" style="margin:5px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/15/15874.png" alt="Phone" width="50" style="margin:5px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png" alt="Laptop" width="50" style="margin:5px;">
+       
+    </marquee> -->
+   
+    <script>
+    document.getElementById("billing_system").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Get form data
+    const formData = new FormData(this);
+    const dataObject = {};
+    formData.forEach((value, key) => dataObject[key] = value);
+    
+    // Save to localStorage
+    localStorage.setItem("formData", JSON.stringify(dataObject));
+
+    // Send to Google Sheets
+    fetch(this.action, { method: "POST", body: formData })
+        .then(res => res.json().catch(() => ({})))
+        .then(() => {
+            // Redirect to receipt page after success
+            window.location.href = "sewa_receipt.html";
+        })
+        .catch(err => {
+            alert("Submission failed.");
+            console.error(err);
+        });
+});
+ // Set today's date as default for joining date
+    document.addEventListener('DOMContentLoaded', function() {
+        const today = new Date();
+        
+        // Format the date as YYYY-MM-DD (required for date input)
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        
+        const formattedDate = `${year}-${month}-${day}`;
+        document.getElementById('joiningDate').value = formattedDate;
+        
+        // Alternative using toISOString (for UTC date)
+        // const formattedDate = today.toISOString().split('T')[0];
+        // document.getElementById('joiningDate').value = formattedDate;
+    });
+</script>
+
+
+<script>
+const apiUrl = "https://script.google.com/macros/s/AKfycbzLowcWKLEAUh4rOJehMwWBqpqpXuf_wGq6FtF9TwHuc1wEMX5cCe8A-rq2xFKFj5KLEA/exec";
+
+// Get last Id and set hidden input
+fetch(apiUrl)
+  .then(res => res.json())
+  .then(data => {
+    let newId;
+    if (data.length > 0) {
+      let lastId = parseInt(data[data.length - 1].Id || 0);
+      newId = lastId + 1;
+    } else {
+      newId = 1;
+    }
+
+    // Set ID field
+    document.getElementById("Id").value = newId;
+
+    // Generate Assign Code like SAR-1, SAR-2
+    document.getElementById("assigncode").value = "SSEWA-" + newId;
+  })
+  .catch(err => {
+    console.error("Error fetching last Id:", err);
+
+    // fallback values
+    document.getElementById("Id").value = 1;
+    document.getElementById("assigncode").value = "SSEWA-1";
+  });
+document.getElementById("referralId").addEventListener("blur", function() {
+    let enteredCode = this.value.trim();
+
+    if (enteredCode === "") return;
+
+    fetch(apiUrl)
+        .then(res => res.json())
+        .then(data => {
+            // Find row with matching refercode
+            let record = data.find(row => row.refercode == enteredCode);
+
+            if (record) {
+                // Fill target inputs
+                document.getElementById("referral").value = record.Id;
+                document.getElementById("referralName").value = record.fullName;
+                document.getElementById("submitBtn").disabled = false;
+            } else {
+                alert("Referral Code not found!");
+                document.getElementById("referral").value = "";
+                document.getElementById("referralName").value = "";
+                document.getElementById("submitBtn").disabled = true;
+            }
+        })
+        .catch(err => {
+            console.error("Error fetching referral data:", err);
+            document.getElementById("submitBtn").disabled = true;
+        });
+});
+</script>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+</html>
