@@ -67,19 +67,13 @@
                 html += '<div class="row mb-2"><div class="col-md-4 fw-bold">पूरा नाम:</div><div class="col-md-8">' + (formData.fullName || 'N/A') + '</div></div>';
                 html += '<div class="row mb-2"><div class="col-md-4 fw-bold">मोबाइल नंबर:</div><div class="col-md-8">' + (formData.mobile || 'N/A') + '</div></div>';
                 
-                // Bank Details
-                if (formData.bankName || formData.accountNumber || formData.ifscCode) {
-                    html += '<h5 class="border-bottom pb-2 mt-4 mb-3">बैंक विवरण</h5>';
-                    html += '<div class="row mb-2"><div class="col-md-4 fw-bold">बैंक का नाम:</div><div class="col-md-8">' + (formData.bankName || 'N/A') + '</div></div>';
-                    html += '<div class="row mb-2"><div class="col-md-4 fw-bold">खाता संख्या:</div><div class="col-md-8">' + (formData.accountNumber || 'N/A') + '</div></div>';
-                    html += '<div class="row mb-2"><div class="col-md-4 fw-bold">आईएफएससी कोड:</div><div class="col-md-8">' + (formData.ifscCode || 'N/A') + '</div></div>';
-                }
+             
                 
                 // Referral Details
                 if (formData.referralName || formData.referralId) {
-                    html += '<h5 class="border-bottom pb-2 mt-4 mb-3">रेफरल विवरण</h5>';
-                    html += '<div class="row mb-2"><div class="col-md-4 fw-bold">रेफरल नाम:</div><div class="col-md-8">' + (formData.referralName || 'N/A') + '</div></div>';
-                    html += '<div class="receipt-row"><div class="receipt-label">रेफरल आईडी:</div><div class="receipt-value">' 
+                    html += '<h5 class="border-bottom pb-2 mt-4 mb-3">अनुशंसा विवरण</h5>';
+                    html += '<div class="row mb-2"><div class="col-md-4 fw-bold">अनुशंसा नाम:</div><div class="col-md-8">' + (formData.referralName || 'N/A') + '</div></div>';
+                    html += '<div class="receipt-row"><div class="receipt-label">अनुशंसा आईडी:</div><div class="receipt-value">' 
       + (formData.referralId ? 'SAR-' + formData.referralId : 'N/A') 
       + '</div></div>';
                 }
