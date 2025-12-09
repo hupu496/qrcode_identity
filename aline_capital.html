@@ -439,14 +439,14 @@ fetch(apiUrl)
     document.getElementById("Id").value = newId;
 
     // Generate Assign Code like SAR-1, SAR-2
-    document.getElementById("assigncode").value = "AlC-" + newId;
+    document.getElementById("assigncode").value = "ALC-" + newId;
   })
   .catch(err => {
     console.error("Error fetching last Id:", err);
 
     // fallback values
     document.getElementById("Id").value = 1;
-    document.getElementById("assigncode").value = "SAR-1";
+    document.getElementById("assigncode").value = "ALC-1";
   });
 document.getElementById("referralId").addEventListener("blur", function() {
     let enteredCode = this.value.trim();
