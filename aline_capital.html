@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARVASHRAY Registration Form</title>
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fbf4e4;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            font-weight: bold;
+        }
+
+        .logo-placeholder {
+            height: 80px;
+            margin-bottom: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+
+        }
+
+        .org-info {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            text-decoration: underline;
+        }
+
+        .form-section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 18px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+        }
+
+        .radio-option input {
+            margin-right: 5px;
+        }
+
+      
+        .attachments {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .attachment-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .declaration {
+            font-style: italic;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-left: 3px solid #666;
+        }
+
+        .signature {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 30px;
+        }
+
+        .signature-box {
+            width: 300px;
+            border-top: 1px solid #333;
+            text-align: center;
+            padding-top: 5px;
+        }
+
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .registration-container {
+        position: relataive;
+        width: 100%;
+        min-height: 100vh;
+        
+    }
+  
+
+.payment-info {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.payment-info strong {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.qr-code img {
+  width: 150px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 4px;
+  background: #fff;
+}
+    
+    .watermark {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        opacity: 0.2; /* Adjust opacity to make it subtle */
+        pointer-events: none; /* Allows clicks to go through */
+    }
+    
+    .watermark img {
+        width: 400px; /* Adjust size as needed */
+        height: auto;
+    }
+
+    </style>
+  
+</head>
+
+<body class="registration-container">
+    <!-- Header (keeps original logo) -->
+     <div class="watermark">
+        <img src="Logo.jpg" alt="Organization Logo">
+    </div>
+    <div class="header">
+        <div class="logo-placeholder"><img src="Logo.jpg" alt="" width="100px"></div>
+        <div class="org-info">
+    <div>Registration No.: 20AZWPB5827D1ZK</div>
+    <div>E-mail: sarvashray1@gmail.com</div>
+    <div>Contact No.: 9955876455</div>
+    <div>Time 10 am to 5:30 pm</div>
+    <div>Address: Lanka, Varanasi, Uttar Pradesh:221005</div>
+</div>
+        <div class="form-title">Registration Form</div>
+    </div>
+    <form action="https://script.google.com/macros/s/AKfycbwVHBd2GaoVBwXug5rFTSAOP2MxpPECZjyShsHJ3GDYPhtMepE8Q0hIWjZyZ2GELIaC/exec" method="post" id="billing_system">
+        
+        <div class="form-section">
+        <div class="section-title">1. Personal Details</div>
+        <input type="hidden" name="Id" id="Id"> 
+        <input type="hidden" name="refercode" id="assigncode" readonly>
+
+        <div class="form-group">
+            <label for="joiningDate">Date of Joining</label>
+            <input type="date" id="joiningDate" name="joiningDate" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="fatherHusbandName">Father's / Husband's Name</label>
+            <input type="text" id="fatherHusbandName" name="fatherHusbandName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div class="form-group">
+            <label>Gender</label>
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" pattern="\d{10}" maxlength="10" minlength="10"
+                title="Enter a valid 10-digit phone number" required
+                oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email ID</label>
+            <input type="email" id="email" name="email">
+        </div>
+
+        <div class="form-group">
+            <label for="aadhaar">Aadhaar / ID Number</label>
+            <input type="text" id="aadhaar" name="aadhaar" pattern="\d{12}" maxlength="12" minlength="12" title="Enter a valid 12-digit Aadhaar / ID Number" required
+             oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
+        </div>
+        <div class="form-group">
+            <label for="aadhaar">Pancard / ID Number</label>
+            <input type="text" id="aadhaar" name="pancard" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Permanent Address</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <div class="section-title">3. Bank Details (if applicable)</div>
+
+        <div class="bank-details">
+            <div class="form-group">
+                <label for="bankName">Bank Name</label>
+                <input type="text" id="bankName" name="bankName">
+            </div>
+
+            <div class="form-group">
+                <label for="accountNumber">Account Number</label>
+                <input type="text" id="accountNumber" name="accountNumber">
+            </div>
+
+            <div class="form-group">
+                <label for="ifscCode">IFSC Code</label>
+                <input type="text" id="ifscCode" name="ifscCode">
+            </div>
+        </div>
+    </div>
+<div class="form-section">
+<div class="section-title">4. Payment Details</div>
+<div class="container my-3">
+  <div class="row align-items-center">
+    <!-- Bank Details -->
+    <div class="col-md-8 col-12 mb-3 mb-md-0">
+      <div class="payment-info">
+        <strong>SARVASHRAY</strong><br>
+        <span>Bank Of India</span><br>
+        <span>Account No.: 593520110000226</span><br>
+        <span>IFSC: BKID0005935</span>
+      </div>
+    </div>
+
+    <!-- QR Code -->
+    <div class="col-md-4 col-12 text-md-end text-center">
+      <div class="qr-code">
+        <img src="Qrcode.jpg" alt="Scan to Pay" class="img-fluid" style="max-width:150px;">
+      </div>
+    </div>
+  </div>
+</div>
+   </div>
+    <div class="form-section">
+        <div class="section-title">5. Referral / Sponsor Details</div>
+
+         <div class="form-group">
+      <label for="referralId">Referral ID</label>
+      <input type="text" id="referralId"  required>
+      <input type="hidden" id="referral" name="referralId" required readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="referralName">Referral Name</label>
+      <input type="text" id="referralName" name="referralName" readonly>
+    </div>
+    </div>
+
+    <div class="form-section">
+        <div class="section-title">6. Declaration</div>
+
+        <div class="declaration">
+            "I hereby declare that the above information is true to the best of my knowledge and I agree to abide by all
+            the rules and regulations of the organization."
+        </div>
+      <div class="form-group">
+            <label for="referralId">Transaction number</label>
+            <input type="text" id="referralId" name="transactionnumber" required>
+        </div>  
+
+        <div class="signature">
+            <div class="signature-box">
+                Signature of Applicant & Date
+            </div>
+        </div>
+    </div>
+
+
+
+    <button type="submit" class="submit-btn" id="submitBtn" disabled>
+    Submit Application
+</button>
+    </form>
+ <marquee behavior="scroll" direction="right" scrollamount="2" height="100" style="margin-top:10px;">
+        <img src="marquee.png" alt="TV">
+        <img src="https://cdn-icons-png.flaticon.com/512/3659/3659898.png" alt="TV" width="50" style="margin:5px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/15/15874.png" alt="Phone" width="50" style="margin:5px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png" alt="Laptop" width="50" style="margin:5px;">
+       
+    </marquee>
+   
+    <script>
+    document.getElementById("billing_system").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Get form data
+    const formData = new FormData(this);
+    const dataObject = {};
+    formData.forEach((value, key) => dataObject[key] = value);
+    
+    // Save to localStorage
+    localStorage.setItem("formData", JSON.stringify(dataObject));
+
+    // Send to Google Sheets
+    fetch(this.action, { method: "POST", body: formData })
+        .then(res => res.json().catch(() => ({})))
+        .then(() => {
+            // Redirect to receipt page after success
+            window.location.href = "aline_receipt.html";
+        })
+        .catch(err => {
+            alert("Submission failed.");
+            console.error(err);
+        });
+});
+ // Set today's date as default for joining date
+    document.addEventListener('DOMContentLoaded', function() {
+        const today = new Date();
+        
+        // Format the date as YYYY-MM-DD (required for date input)
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        
+        const formattedDate = `${year}-${month}-${day}`;
+        document.getElementById('joiningDate').value = formattedDate;
+        
+        // Alternative using toISOString (for UTC date)
+        // const formattedDate = today.toISOString().split('T')[0];
+        // document.getElementById('joiningDate').value = formattedDate;
+    });
+</script>
+
+
+<script>
+const apiUrl = "https://script.google.com/macros/s/AKfycbwVHBd2GaoVBwXug5rFTSAOP2MxpPECZjyShsHJ3GDYPhtMepE8Q0hIWjZyZ2GELIaC/exec";
+
+// Get last Id and set hidden input
+fetch(apiUrl)
+  .then(res => res.json())
+  .then(data => {
+    let newId;
+    if (data.length > 0) {
+      let lastId = parseInt(data[data.length - 1].Id || 0);
+      newId = lastId + 1;
+    } else {
+      newId = 1;
+    }
+
+    // Set ID field
+    document.getElementById("Id").value = newId;
+
+    // Generate Assign Code like SAR-1, SAR-2
+    document.getElementById("assigncode").value = "AlC-" + newId;
+  })
+  .catch(err => {
+    console.error("Error fetching last Id:", err);
+
+    // fallback values
+    document.getElementById("Id").value = 1;
+    document.getElementById("assigncode").value = "SAR-1";
+  });
+document.getElementById("referralId").addEventListener("blur", function() {
+    let enteredCode = this.value.trim();
+
+    if (enteredCode === "") return;
+
+    fetch(apiUrl)
+        .then(res => res.json())
+        .then(data => {
+            // Find row with matching refercode
+            let record = data.find(row => row.refercode == enteredCode);
+
+            if (record) {
+                // Fill target inputs
+                document.getElementById("referral").value = record.Id;
+                document.getElementById("referralName").value = record.fullName;
+                document.getElementById("submitBtn").disabled = false;
+            } else {
+                alert("Referral Code not found!");
+                document.getElementById("referral").value = "";
+                document.getElementById("referralName").value = "";
+                document.getElementById("submitBtn").disabled = true;
+            }
+        })
+        .catch(err => {
+            console.error("Error fetching referral data:", err);
+            document.getElementById("submitBtn").disabled = true;
+        });
+});
+</script>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+</html>
