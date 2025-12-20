@@ -326,15 +326,14 @@
 <div class="qr-code">
    <img src="sanathan_qr.jpeg" alt="" width="100px">
     <!-- QR Code -->
-    <div class="col-md-4 col-12 text-md-end ">
-      <div class="qr-code">
-        <a class="btn btn-sm btn-success" href="upi://pay?pa=boim-451390330578@boi&pn=SRISEVASANATHAN&am=101.00&cu=INR&tn=Enter%20Amount&mode=02">
-    Pay via UPI
-</a>
+
 
 
 
       </div>
+      <button class="btn btn-success mt-2" onclick="downloadQR()">
+        Download QR
+    </button>
     </div>
   </div>
 </div>
@@ -493,6 +492,17 @@ document.getElementById("referralId").addEventListener("blur", function() {
             document.getElementById("submitBtn").disabled = true;
         });
 });
+</script>
+<script>
+function downloadQR() {
+    const img = document.getElementById("qrImg");
+    const link = document.createElement("a");
+    link.href = img.src;
+    link.download = "sonakshi_upi_qr.jpeg";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
 </script>
 
 </body>
