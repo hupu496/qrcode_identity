@@ -324,7 +324,7 @@
     </div>
    <div class="col-md-4 col-12 text-md-end text-center">
 <div class="qr-code">
-   <img src="sanathan_qr.jpeg" alt="" width="100px">
+   <img id="qrImg" src="sanathan_qr.jpeg" alt="UPI QR" width="100">
     <!-- QR Code -->
 
 
@@ -498,7 +498,7 @@ function downloadQR() {
     const img = document.getElementById("qrImg");
     const link = document.createElement("a");
     link.href = img.src;
-    link.download = "sonakshi_upi_qr.jpeg";
+    link.download = "sanathan_upi_qr.jpeg";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
